@@ -76,9 +76,9 @@ WSGI_APPLICATION = 'guardian_of_usc.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'your-db-name',
-        'HOST': 'clu',
-        'PORT': 'baby',
+        'NAME': 'cluster0',
+        'HOST': 'mongodb+srv://baby:baby@cluster0-tp62r.mongodb.net/test?retryWrites=true&w=majorityt',
+        'PORT': 27017,
         'USER': 'baby',
         'PASSWORD': 'baby',
     }
