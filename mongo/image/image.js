@@ -16,4 +16,15 @@ router.post("/", (req, res) => {
         .catch(err => res.status(500).send(err));
 })
 
-module.exports = router
+router.get("/", (req, res) => {
+    Image.find({}, (err, data) => {
+        var map = {};
+        data.forEach(info => {
+            map[info._id] = info;
+        });
+
+        res.status(200).send(map);
+    });
+});
+
+module.exports = router;
