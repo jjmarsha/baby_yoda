@@ -7,7 +7,7 @@ const morgan = require("morgan");
 const api = require("./api")
 
 //MiddleWare
-server.use(bodyParse.urlencoded({ extended: false }));
+server.use(bodyParse.urlencoded({ extended: true }));
 server.use(bodyParse.json());
 server.use(morgan("dev"));
 
@@ -35,5 +35,5 @@ for(end of api) {
 //   .then(() => console.log("Connected to MongoDB"))
 //   .catch(err => console.log(err));
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 server.listen(port, () => console.log("Running Server at " + port));
