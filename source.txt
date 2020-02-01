@@ -1,0 +1,1 @@
+export GOOGLE_APPLICATION_CREDENTIALS=/home/john/hacksc2020/baby_yoda/My_Project_Test_CV_1d00cb212275.json
