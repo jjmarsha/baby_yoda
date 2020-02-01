@@ -1,7 +1,7 @@
 const express = require("express");
 const server = express();
 const mongoose = require("mongoose");
-// const db = require("./config/keys").mongoURI;
+const db = "mongodb+srv://baby:baby@cluster0-tp62r.mongodb.net/test?retryWrites=true&w=majority";
 const bodyParse = require("body-parser");
 const morgan = require("morgan");
 const api = require("./api")
@@ -30,10 +30,10 @@ for(end of api) {
   server.use(end.url, end.methods)
 }
 
-// mongoose
-//   .connect(db)
-//   .then(() => console.log("Connected to MongoDB"))
-//   .catch(err => console.log(err));
+mongoose
+  .connect(db)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch(err => console.log(err));
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 server.listen(port, () => console.log("Running Server at " + port));
