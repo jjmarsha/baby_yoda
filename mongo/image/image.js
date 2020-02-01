@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Image = require("./schema");
 const vision = require('@google-cloud/vision');
-const 
 const client = new vision.ImageAnnotatorClient();
 
 
