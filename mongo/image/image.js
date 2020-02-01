@@ -16,19 +16,16 @@ var download = function(uri, filename, callback){
 };
 
 
-router.post("/", (req, res) => {
+router.post("/", async(req, res) => {
     const data = {
         cloud_url: req.body.cloud_url,
         image_url: req.body.image_url
     };
 
-    download(data.cloud_url, './temp.jpg', function(){
-        console.log('done');
-    });
-
-    const [result] = await client.faceDetection("./temp.jpg");
+    const [result] = await client.faceDetection(`gs://my-project-test-cv.appspot.com/${data.image_url}`);
     const faces = result.faceAnnotations;
     if(faces.length > 0) {
+        console.log("uploaded")
         let image = new Image(data);
         image
             .save()
@@ -42,9 +39,9 @@ router.post("/", (req, res) => {
 
 router.get("/", (req, res) => {
     Image.find({}, (err, data) => {
-        var map = {};
+        var map = [];
         data.forEach(info => {
-            map[info._id] = info;
+            map.push(info);
         });
 
         res.status(200).send(map);
