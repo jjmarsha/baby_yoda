@@ -10,7 +10,6 @@
     "build": "",
     "prod": "node build/api.bundle.js"
   },
-  "proxy": "http://localhost:8100",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jjmarsha/baby_yoda.git"

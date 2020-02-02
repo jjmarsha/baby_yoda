@@ -16,7 +16,7 @@ server.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, 'webapp','build')));
 
 //Prevent CORS And Allow PUT,POST,DELETE,PATCH,GET
-app.get("/api", server.use((req, res, next) => {
+app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"),
     res.header(
       "Access-Control-Allow-Headers",
@@ -27,15 +27,15 @@ app.get("/api", server.use((req, res, next) => {
     return res.status(200).json({});
   }
   next();
-}));
+});
+
+app.use("/api", api);
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'webapp', 'build','index.html'));
 })
 
-for(end of api) {
-  server.use(end.url, end.methods)
-}
+
 
 mongoose
   .connect(db)
