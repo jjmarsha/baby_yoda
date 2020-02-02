@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 // const url = "localhost:3001/image";
-const url = "http://e32ece53.ngrok.io/image";
+const url = "https://api.the-goat-at-hacksc2020.tech/image";
 
 export default class Offenders extends React.Component {
     constructor(props) {
