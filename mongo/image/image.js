@@ -23,6 +23,7 @@ router.post("/", (req, res) => {
         image_url: req.body.image_url,
     };
 
+    console.log(data);
 
         let image = new Image(data);
         image
