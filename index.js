@@ -16,7 +16,7 @@ server.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, 'webapp','build')));
 
 //Prevent CORS And Allow PUT,POST,DELETE,PATCH,GET
-app.use("/api", server.use((req, res, next) => {
+app.get("/api", server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"),
     res.header(
       "Access-Control-Allow-Headers",
