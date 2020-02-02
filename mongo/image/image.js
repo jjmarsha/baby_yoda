@@ -11,19 +11,11 @@ router.post("/", async(req, res) => {
         image_url: req.body.image_url
     };
 
-    const [result] = await client.faceDetection(`gs://my-project-test-cv.appspot.com/${data.image_url}`);
-    const faces = result.faceAnnotations;
-    if(faces.length > 0) {
-        console.log("uploaded")
         let image = new Image(data);
         image
             .save()
             .then(image => res.status(200).json(image))
             .catch(err => res.status(500).send(err));
-    } else {
-        console.log("No face");
-    }
-
 })
 
 router.get("/", (req, res) => {

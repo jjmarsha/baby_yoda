@@ -31,7 +31,7 @@ export default class Offenders extends React.Component {
                         return (
                             <tr style={{border: "1px solid black"}}>
                                 <td style={{border: "1px solid black", width:"30%", textAlign: "center"}}>
-                                    {console.log(value.cloud_url)}<img src={value.cloud_url}/>
+                                    <img src={value.cloud_url}/>
                                 </td>
                                 <td style={{border: "1px solid black"}}>
                                     {value.date}
