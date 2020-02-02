@@ -33,16 +33,13 @@ for(end of api) {
 const vision = require('@google-cloud/vision');
 const client = new vision.ImageAnnotatorClient();
 
-const test = async () =>{
+// const test = async () =>{
+//     const [result] = await client.faceDetection(`temp.jpg`);
+//     const faces = result.faceAnnotations;
+//     console.log('Faces:');
+// }
 
-
-const [result] = await client.faceDetection(`temp.jpg`);
-const faces = result.faceAnnotations;
-console.log('Faces:');
-
-}
-
-test();
+//test();
 
 mongoose
   .connect(db)
