@@ -1,5 +1,7 @@
 const express = require("express");
 const server = express();
+const app = express();
+const path = require('path');
 const mongoose = require("mongoose");
 const db = "mongodb+srv://baby:baby@cluster0-tp62r.mongodb.net/test?retryWrites=true&w=majority";
 const bodyParse = require("body-parser");
@@ -11,8 +13,10 @@ server.use(bodyParse.urlencoded({ extended: true }));
 server.use(bodyParse.json());
 server.use(morgan("dev"));
 
+app.use(express.static(path.join(__dirname, 'webapp','build')));
+
 //Prevent CORS And Allow PUT,POST,DELETE,PATCH,GET
-server.use((req, res, next) => {
+app.use("/api", server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"),
     res.header(
       "Access-Control-Allow-Headers",
@@ -23,28 +27,22 @@ server.use((req, res, next) => {
     return res.status(200).json({});
   }
   next();
-});
+}));
 
+app.get('/', (req, res) => {
+  
+  res.sendFile(path.join(__dirname, 'webapp', 'build','index.html'));
+  console.log("send file: " + path.join(__dirname, 'webapp', 'build','index.html'))
+})
 
 for(end of api) {
   server.use(end.url, end.methods)
 }
-
-const vision = require('@google-cloud/vision');
-const client = new vision.ImageAnnotatorClient();
-
-// const test = async () =>{
-//     const [result] = await client.faceDetection(`temp.jpg`);
-//     const faces = result.faceAnnotations;
-//     console.log('Faces:');
-// }
-
-//test();
 
 mongoose
   .connect(db)
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.log(err));
 
-const port = process.env.PORT || 8080;
-server.listen(port, "0.0.0.0", () => console.log("Running Server at " + port));
+const port = process.env.PORT || 8100;
+app.listen(port, "0.0.0.0", () => console.log("Running Server at " + port));
