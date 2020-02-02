@@ -23,24 +23,14 @@ router.post("/", (req, res) => {
         image_url: req.body.image_url
     };
 
-    console.log(data);
 
-    download(data.cloud_url, 'tmp.jpg', async () => {
-        const [result] = await client.faceDetection("tmp.jpg");
-        const faces = result.faceAnnotations;
-        if(faces.length > 0) {
-                    let image = new Image(data);
-                    image
-                        .save()
-                        .then(image => res.status(200).json(image))
-                        .catch(err => res.status(500).send(err));
-                    res.status(200).send("success")
-                } else {
-                    console.log("No face");
-                    console.log(faces)
-                    res.status(502).send("failure")
-                }
-    });
+        let image = new Image(data);
+        image
+            .save()
+            .then(image => res.status(200).json(image))
+            .catch(err => res.status(500).send(err));
+
+            res.send("accessed")
 })
 
 router.get("/", (req, res) => {
