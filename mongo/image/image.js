@@ -20,7 +20,7 @@ var download = function(uri, filename, callback){
 router.post("/", (req, res) => {
     const data = {
         cloud_url: req.body.cloud_url,
-        image_url: req.body.image_url
+        image_url: req.body.image_url,
     };
 
 

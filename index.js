@@ -6,13 +6,11 @@ const db = "mongodb+srv://baby:baby@cluster0-tp62r.mongodb.net/test?retryWrites=
 const bodyParse = require("body-parser");
 const morgan = require("morgan");
 const api = require("./api")
-const customDomainReroute = require('@turinggroup/serverless-express-custom-domain-middleware').customDomainReroute
 
 //MiddleWare
 app.use(bodyParse.urlencoded({ extended: true }));
 app.use(bodyParse.json());
 app.use(morgan("dev"));
-app.use(customDomainReroute);
 
 app.use(express.static(path.join(__dirname, 'webapp','build')));
 
