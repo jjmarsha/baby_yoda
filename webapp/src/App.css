@@ -19,9 +19,18 @@
     100% {top: 260px}
 }
 
-@keyframes load {
+/* @keyframes load {
     0% {top: -100px}
-    10% {top: 260px}
+    4% {top: 260px}
+    96% {top: 260px}
+    100% {top: 260px}
+} */
+
+@keyframes load {
+    0% {top: -200px}
+    10% {top: -200px}
+    30% {top: -260px}
+    45% {top: 260px}
     90% {top: 260px}
     100% {top: -100px}
 }
