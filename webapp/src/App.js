@@ -5,6 +5,7 @@ import Glasses from "./static/glasses.png"
 import "./App.css"
 import Snoop from "./static/thug.mp3";
 import ReactAudioPlayer from 'react-audio-player';
+import ReactPlayer from 'react-player';
 
 class  App extends React.Component {
     constructor(props) {
@@ -23,11 +24,14 @@ class  App extends React.Component {
     render() {
         return(
             <div >
-                <ReactAudioPlayer
+                {/* <ReactAudioPlayer
                     src={Snoop}
                     autoPlay={true}
                     controls
-                    />
+                    /> */}
+                <div style={{position: "absolute", opacity: 0}}>
+                    <ReactPlayer url='https://www.youtube.com/watch?v=5QCaaAyz-yA' playing />
+                </div>
                 <header style={{textAlign: "center"}}>
                     <img src={Glasses} className={"glasses"}/>
                     {/* <audio style={{opacity: 0, width: "0px", height: "0px"}}  preload={true} src={Snoop}></audio> */}
