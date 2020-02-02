@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 // const url = "localhost:3001/image";
-const url = "http://0857dab3.ngrok.io/image";
+const url = "http://e32ece53.ngrok.io/image";
 
 export default class Offenders extends React.Component {
     constructor(props) {
@@ -31,7 +31,7 @@ export default class Offenders extends React.Component {
                         return (
                             <tr style={{border: "1px solid black"}}>
                                 <td style={{border: "1px solid black", width:"30%", textAlign: "center"}}>
-                                    <img src={value.cloud_url}/>
+                                    {console.log(value.cloud_url)}<img src={value.cloud_url}/>
                                 </td>
                                 <td style={{border: "1px solid black"}}>
                                     {value.date}
