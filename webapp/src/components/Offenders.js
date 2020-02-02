@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Card } from 'react-bootstrap';
 // const url = "localhost:3001/image";
-const url = "https://api.the-goat-at-hacksc2020.tech/image";
+const url = "34.70.122.5/api/image";
 
 export default class Offenders extends React.Component {
     constructor(props) {
