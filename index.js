@@ -43,5 +43,5 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.log(err));
 
-const port = process.env.PORT || 8100;
+const port = process.env.PORT || 8080;
 app.listen(port, "0.0.0.0", () => console.log("Running Server at " + port));
