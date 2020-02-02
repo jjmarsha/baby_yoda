@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "server": "nodemon index.js",
-    "build": "webpack",
+    "build": "",
     "prod": "node build/api.bundle.js"
   },
   "proxy": "http://localhost:8100",

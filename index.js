@@ -30,9 +30,7 @@ app.use("/api", server.use((req, res, next) => {
 }));
 
 app.get('/', (req, res) => {
-  
   res.sendFile(path.join(__dirname, 'webapp', 'build','index.html'));
-  console.log("send file: " + path.join(__dirname, 'webapp', 'build','index.html'))
 })
 
 for(end of api) {
