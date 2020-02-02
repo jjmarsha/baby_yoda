@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Card } from 'react-bootstrap';
+
 // const url = "localhost:3001/image";
 const url = "http://e32ece53.ngrok.io/image";
 
@@ -25,22 +25,22 @@ export default class Offenders extends React.Component {
 
     render() {
         return(
-                <div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap"}}>
+            <div>
+                <table style={{width: "100%"}}>
                     {this.state.offenders.map((value) => {
                         return (
-                            <Card style={{ width: '18rem', display: "inline-block" }}>
-                                <Card.Img variant="top" src={value.cloud_url} />
-                                <Card.Body>
-                                    <Card.Title>Suspect</Card.Title>
-                                    <Card.Text>
+                            <tr style={{border: "1px solid black"}}>
+                                <td style={{border: "1px solid black", width:"30%", textAlign: "center"}}>
+                                    {console.log(value.cloud_url)}<img src={value.cloud_url}/>
+                                </td>
+                                <td style={{border: "1px solid black"}}>
                                     {value.date}
-                                    </Card.Text>
-                                </Card.Body>
-                                
-                            </Card>
+                                </td>
+                            </tr>
                         )
                     })}
-                </div>
+                </table>
+            </div>
         )
     }
 } 
