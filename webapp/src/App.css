@@ -1,0 +1,15 @@
+.glasses {
+    position: relative;
+    display: block;
+    width: 300px;
+    margin: auto;
+    left: -20px;
+    top: -100px;
+    -webkit-transition: all 4s;
+    transition: all 4s;
+    z-index: 1;
+}
+
+.loaded {
+    top: 260px;
+}
