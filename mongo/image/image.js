@@ -29,8 +29,6 @@ router.post("/", (req, res) => {
             .save()
             .then(image => res.status(200).json(image))
             .catch(err => res.status(500).send(err));
-
-            res.send("accessed")
 })
 
 router.get("/", (req, res) => {

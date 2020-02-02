@@ -26,7 +26,7 @@ export default class Offenders extends React.Component {
 
     render() {
         return(
-                <div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap"}}>
+                <div style={{display: "flex", justifyContent: "space-around", flexWrap: "wrap", marginBottom: "10%"}}>
                     {this.state.offenders.map((value) => {
                         return (
                             <Card style={{ width: '20rem', display: "inline-block" }}>
