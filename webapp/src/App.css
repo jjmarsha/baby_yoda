@@ -8,8 +8,20 @@
     -webkit-transition: all 4s;
     transition: all 4s;
     z-index: 1;
+    -webkit-animation-name: load; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: load;
+    animation-duration: 30s;
 }
 
-.loaded {
-    top: 260px;
+@-webkit-keyframes load {
+    0% {top: -100px}
+    100% {top: 260px}
+}
+
+@keyframes load {
+    0% {top: -100px}
+    10% {top: 260px}
+    90% {top: 260px}
+    100% {top: -100px}
 }
