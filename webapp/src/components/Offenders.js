@@ -3,7 +3,7 @@ import axios from "axios";
 import { Card } from 'react-bootstrap';
 
 // const url = "/api/image";
-const url = "http://34.70.122.5:8100/api/image"
+const url = "http://34.70.122.5:8080/api/image"
 
 export default class Offenders extends React.Component {
     constructor(props) {
